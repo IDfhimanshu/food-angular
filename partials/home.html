@@ -1,0 +1,53 @@
+<div ng-include="'partials/userheader.html'"></div>
+<div class="container">
+  <div class="row">
+  <div class="col-md-3">
+    <div class="">
+      <h4>
+      Filter
+    </h4>
+    <div class="">
+    <div class="checkbox">
+      <label><input type="checkbox" ng-model="answers1"  ng-change="stateChanged('product_price',true)" value="">Price - Max to Min</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" ng-model="answers2" ng-change="stateChanged('product_price',false)" value="">Price - Min to Max</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" ng-model="answers3" ng-change="stateChanged('date_added',false)" value="">Newly Added</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" ng-model="answers4" ng-change="stateChanged('meal_type',false)" value="">Course type</label>
+    </div>
+  </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+  <div class="row">
+  <div class="col-md-4" ng-repeat ="product in products | toArray:false | orderBy:filter:arrangment"">
+    <a href="#/products/{{product.product_slug}}">
+    <div class="dish-card">
+      <div class="dish-img">
+          <img alt="1"  class="full-width" width="360px" height="240px" ng-src="{{product.product_image}}">
+      </div>
+      <div class="dish-description">
+        <p class="food-title">
+          {{product.product_name}}
+        </p>
+        <div class="clearfix"></div>
+        <div class="dish-price">
+        <span class="pull-left">
+          <i class="icon icon-rupee"></i>Rs. {{product.product_price}}
+        </span>
+        </div>
+      </div>
+      </div>
+    </a>
+    </div>
+  </div>
+  </div>
+<div ng-if = "totalItems">
+<pagination total-items="totalItems" ng-model="pagination.currentpage" ng-change="userPageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+</div>
+  </div>
+</div>

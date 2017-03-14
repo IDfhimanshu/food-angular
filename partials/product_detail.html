@@ -1,0 +1,39 @@
+<div ng-include="'partials/userheader.html'"></div>
+<div class ="container pr-bc">
+    <div uib-alert class="alert-box pad-20" ng-show="alertHide" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert()">{{alert.msg}}</div>
+  <div class="col-md-5 mr-top-30">
+    <img alt="1"  class="full-width" width="360px" height="240px" ng-src="{{product_info.product_image}}">
+  </div>
+  <div class="col-md-7 mr-top-30">
+    <div class="product_name pad-10">
+      {{product_info.product_name}}
+    </div>
+    <div class="product_price pad-10">
+      Rs. {{product_info.product_price}}
+    </div>
+    <div class="product_desc pad-10">
+      Description : {{product_info.product_desc}}
+    </div>
+    <div class="product_desc pad-10">
+      Product Stock : {{product_info.product_stock}}
+    </div>
+      <div class="pr_meal pad-10">
+        Meal Type : {{product_info.meal_type}}
+      </div>
+      <div class="pr_meal pad-10">
+        Meal Serving Info : {{product_info.meal_serving_type}}
+      </div>
+  </div>
+  <form class="col-lg-offset-5 col-lg-7" ng-show="isOrderable">
+    <div class="text-center">
+      Order Now
+    </div>
+    Quantity
+    <select class="mr-btm-10" ng-model="quant" ng-change="get_order_price()" ng-options="v for v in quantRange">
+    </select>
+    <div class="mr-btm-10">
+      Total Price : {{product_info.product_price}}
+    </div>
+    <button  class="btn btn-lg btn-primary btn-block" type="submit" ng-click="order()">Order</button>
+  </form>
+</div>

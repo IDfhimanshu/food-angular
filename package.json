@@ -1,0 +1,11 @@
+{
+  "name": "mykhana",
+  "version": "1.0.0",
+  "description": "inc-42 angualr",
+  "scripts": {
+    "start": "harp server --port $PORT"
+  },
+  "dependencies": {
+    "harp": "^0.23.0"
+  }
+}

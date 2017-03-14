@@ -1,0 +1,144 @@
+.bc-image{
+    background: url('../images/hp-banner.jpg?v=1')center center;
+    height: 600px;
+    background-size: 100% 100%;
+  }
+.welcome-home{
+  margin-top: 100px;
+  font-size: 40px;
+  color: #ffffff;
+}
+.sign_btn{
+    border: 1px solid #03c29f;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+.mr-top-30{
+  margin-top: 30px;
+}
+body {
+	background: #eee !important;
+}
+
+.wrapper {
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+.mr-btm-10{
+  margin-bottom: 10px;
+}
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+	}
+
+	input[type="text"] {
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+  .no-account{
+    margin-top: 10px;
+    color: blue;
+    float: right;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .alert-box{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 16px;
+  }
+.wht-clr{
+  color: white;
+}
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.drop-pr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.pad-20{
+  padding: 20px;
+}
+.create-btn{
+  margin-left: 60px;
+}
+.dish-card{
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+}
+.full-width{
+  width: 100%
+}
+.food-title{
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 10px;
+}
+.dish-price{
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-left: 10px ;
+}
+.pr-bc{
+  background-color: #ffffff;
+}
+.product_name{
+  font-size: 20px;
+  color: #03c29f;
+}
+.product_desc{
+  font-size: 14px;
+}
+.pad-10{
+  padding: 10px;
+}
+.product_price{
+  font-size: 18px;
+  color: red;
+}
+.pr_meal .pr_meal{
+  font-size: 13px;
+
+}

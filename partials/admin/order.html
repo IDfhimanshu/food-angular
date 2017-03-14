@@ -1,0 +1,40 @@
+<div ng-include="'partials/admin/header.html'"></div>
+<div class="container">
+  <div class="btn-group text-center">
+  <button type="button" ng-click="filterOrder('all')" class="btn btn-default btn-lg">All</button>
+  <button type="button" ng-click="filterOrder('pending')" class="btn btn-default btn-lg">pending</button>
+  <button type="button" ng-click="filterOrder('cancelled')" class="btn btn-default btn-lg">canceled</button>
+  <button type="button" ng-click="filterOrder('rejected')" class="btn btn-default btn-lg">rejected</button>
+  <button type="button" ng-click="filterOrder('completed')" class="btn btn-default btn-lg">completed</button>
+</div>
+  <div class="table-responsive mr-top-30">
+    <table class="table">
+  <thead>
+      <tr>
+        <th>Sr.</th>
+        <th>Order Id</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Quantity</th>
+        <th>Mark Cancel</th>
+        <th>Mark Complete</th>
+      </tr>
+    </thead>
+  <tr >
+    <tbody>
+      <tr ng-repeat = "order in orders | filter:filterExpr">
+        <td>{{$index + 1}}</td>
+        <td>{{order.id}}</td>
+        <td>{{order.price}}</td>
+        <td>{{order.status}}</td>
+        <td>{{order.quantity}}</td>
+        <td ng-if="order.status == 'pending'"><button type="button" class="btn btn-danger" ng-click="cancel_order(order.id)">Cancel</button></td>
+        <td ng-if="order.status == 'pending'"><button type="button" class="btn btn-success" ng-click="complete_order(order.id)">Complete</button></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<div ng-if = "totalItems">
+<pagination total-items="totalItems" ng-model="adminorderpagination.currentpage" ng-change="adminorderChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+</div>
+</div>

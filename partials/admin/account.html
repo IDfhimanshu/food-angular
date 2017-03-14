@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div uib-alert class="alert-box pad-20" ng-show="alertHide" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert()">{{alert.msg}}</div>
+  <form class="form-signin" ng-show="loginForm">
+    <h2 class="form-signin-heading">Please login</h2>
+    <input type="email" ng-model="login.email" class="form-control mr-btm-10" name="username" placeholder="Email Address" required="" autofocus="" />
+    <input type="password" ng-model="login.password" class="form-control mr-btm-10" name="password" placeholder="Password" required=""/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="adminLogin(login)">Login</button>
+    <div class="sign-up">
+      <div class="no-account" ng-click="show_login()">
+        Doesn't have an account?
+      </div>
+    </div>
+  </form>
+  <form class="form-signin" ng-hide="loginForm">
+    <h2 class="form-signin-heading">Please Sign Up</h2>
+    <input type="text" class="form-control mr-btm-10" name="first_name" ng-model="signup.first_name" placeholder="First Name" required="" autofocus="" />
+    <input type="text" class="form-control mr-btm-10" name="last_name" ng-model="signup.last_name" placeholder="Last Name" required="" autofocus="" />
+    <input type="email" class="form-control mr-btm-10" name="email" ng-model ="signup.email" placeholder="Email Address" required="" autofocus="" />
+    <input type="number" class="form-control mr-btm-10" name="mobile" ng-model="signup.mobile" placeholder="Mobile Number" required="" autofocus="" />
+    <input type="password" class="form-control mr-btm-10" name="password" ng-model="signup.password" placeholder="Password" required="" autofocus="" />
+    <input type="password" class="form-control mr-btm-10" name="confirm_password"  ng-model="signup.confirm_password" placeholder="Password Confirm" required="" autofocus="" />
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="adminRegistration(signup)">Sign Up</button>
+    <div class="sign-up">
+      <div class="no-account" ng-click="show_login()"v >
+        Already have an account?
+      </div>
+    </div>
+  </form>
+</div>

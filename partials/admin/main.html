@@ -1,0 +1,54 @@
+<div ng-include="'partials/admin/header.html'"></div>
+<button type="submit" class="btn create-btn btn-primary" ng-click="create_user()">
+  <i class="wht-clr fa fa-plus-circle" aria-hidden="true"></i> Create User
+</button>
+<div class="container">
+  <div class="table-responsive mr-top-30">
+    <table class="table">
+  <thead>
+      <tr>
+        <th>Sr.</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+  <tr >
+    <tbody>
+      <tr ng-repeat = "user in users">
+        <td>{{$index + 1}}</td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.email}}</td>
+        <td><button type="button" class="btn btn-info" ng-click="get_user(user.id);showModal();">Update</button></a></td>
+        <td><button type="button" class="btn btn-danger" ng-click="delete_user(user.id)">Delete</button></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<div ng-if = "totalItems">
+<pagination total-items="totalItems" ng-model="pagination.currentpage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+</div>
+<!-- modal for updating user -->
+<!-- Modal -->
+<script type="text/ng-template" id="myModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title text-center">Update User {{user_detail.first_name}}</h3>
+    </div>
+    <div class="modal-body">
+      <div uib-alert class="alert-box" ng-show="alertHide" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert()">{{alert.msg}}</div>
+      <form class="form-signin">
+        <input type="text" name="{{user_detail.first_name}}" class="form-control mr-btm-10" ng-model="user_detail.first_name" placeholder="First Name" required="" autofocus="" />
+        <input type="text" name="{{user_detail.last_name}}" class="form-control mr-btm-10" ng-model="user_detail.last_name" placeholder="Last Name" required="" autofocus="" />
+        <input type="email" name="{{user_detail.email}}"class="form-control mr-btm-10" ng-model ="user_detail.email" placeholder="Email Address" required="" autofocus="" />
+        <input type="text" name="{{user_detail.mobile}}" class="form-control mr-btm-10" ng-model="user_detail.mobile" placeholder="Mobile Number" required="" autofocus="" />
+        </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="update_user(user_detail);ok();">Update</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+</script>
+</div>
